@@ -25,10 +25,4 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
     assert_select "title", "Contact | Ruby on Rails Tutorial App"
   end
-
-  test "should get login page" do
-    get :signup
-    assert_response :success
-    assert_select "sign up", "Contact | Ruby on Rails Tutorial App"
-  end
 end
