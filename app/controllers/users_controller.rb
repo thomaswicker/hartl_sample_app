@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     # can the 'debugger' line to fire off a terminal debug mode 
   end
 
-  def new
+  def new 
     @user = User.new
   end
 end
