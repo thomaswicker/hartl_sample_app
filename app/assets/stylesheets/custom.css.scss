@@ -1,6 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
 html {
 	overflow-y: scroll;
 }
@@ -23,6 +31,17 @@ textarea {
 	h1 {
 		margin-bottom: 60px;
 	}
+}
+
+.debug_dump {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  background-color: lightblue;
+  color: darkblue;
+  font-size: 1.3rem;
+  border: 0px;
 }
 
 /* typography */
@@ -72,6 +91,63 @@ p {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
 }
 
 /* footer */
