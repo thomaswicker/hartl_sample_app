@@ -13,6 +13,11 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
+  		# flash ties into the flash block on the view page to render message on first view
+  		flash[:success] = "Welcome to the Sample App!"
+  		redirect_to user_url(@user)
+  		#can also be written as 
+  		# redirect_to @user
   	else
   		render 'new'
   	end
@@ -21,6 +26,7 @@ class UsersController < ApplicationController
   private
 
   	def user_params
+  		# these are called strong parameters
   		params.require(:user).permit(:name, :email, :password, :password_confirmation)
   	end
 end
